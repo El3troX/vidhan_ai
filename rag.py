@@ -153,6 +153,19 @@ def is_overview_query(query):
         ]
     )
 
+def trim_context(docs, max_chars=4000):
+    result = ""
+    for doc in docs:
+        chunk = doc.page_content
+        # if a single chunk is already too big, truncate it
+        if len(result) + len(chunk) > max_chars:
+            remaining = max_chars - len(result)
+            if remaining > 200:  # only add if meaningful space left
+                result += chunk[:remaining] + "\n\n"
+            break
+        result += chunk + "\n\n"
+    return result.strip()
+
 def ask(query):
     intent = classify_intent(query)
 
@@ -175,23 +188,24 @@ def ask(query):
     else:
         retrieval_query = query
 
-    retriever = vectordb.as_retriever(search_kwargs={"k": 6})
-    print(retriever)
+    # lowered k from 6 to 3
+    retriever = vectordb.as_retriever(search_kwargs={"k": 3})
     docs = retriever.invoke(f"query: {retrieval_query}")
 
     if not docs:
         print("\nI could not find an exact provision, but here is the general legal position:")
         return
 
-    context = "\n\n".join(d.page_content for d in docs[:4])
+    # use trim_context instead of raw join
+    context = trim_context(docs, max_chars=4000)
 
     if intent == "GENERAL_RIGHTS" and is_overview_query(query):
-        context = (
+        prefix = (
             "Under the Constitution of India, Fundamental Rights broadly include equality before law, "
             "basic freedoms, protection of life and personal liberty, protection against exploitation, "
             "freedom of religion, cultural and educational rights, and the right to constitutional remedies.\n\n"
-            + context
         )
+        context = prefix + context
 
     response = llm.invoke([
         SystemMessage(content=ANSWER_PROMPT),
@@ -200,7 +214,7 @@ def ask(query):
 
     print("\nAnswer:\n")
     print(response.content)
-
+    
 if __name__ == "__main__":
     while True:
         q = input("\nAsk a legal question (or type 'exit'): ")
