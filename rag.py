@@ -6,17 +6,19 @@ from langchain_core.messages import SystemMessage, HumanMessage
 DB_DIR = "db"
 
 embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+    model_name="BAAI/bge-large-en-v1.5",
+    model_kwargs={"device": "cuda"},
+    encode_kwargs={"normalize_embeddings": True}
 )
 
 vectordb = Chroma(
     persist_directory=DB_DIR,
-    embedding_function=embeddings
+    embedding_function=embeddings,
+    collection_name="legal_docs_chunks_only"
 )
-
 llm = ChatOllama(
-    model="gemma2",
-    temperature=0.2
+    model="gpt-oss:120b-cloud",
+    temperature=0.45
 )
 
 INTENT_PROMPT = """
@@ -33,33 +35,94 @@ Only output the intent name.
 """
 
 ANSWER_PROMPT = """
-You are Vidhan-AI, a legal information assistant for Indian law.
+You are Vidhan-AI, a legal advisory assistant for Indian law.
 
-Answer strictly using the provided legal context.
-Do not rely on external knowledge.
-Do not mention laws, sections, or articles that are not present in the context.
+Users may describe personal situations, family disputes, property issues, or feelings of unfairness in everyday language.
 
-IMPORTANT ANSWER STRUCTURE RULE:
+Your role is to respond as a lawyer would, by identifying the legal issue and providing practical legal guidance.
 
-If the question asks "which section", "which article", "under which provision",
-or otherwise asks to identify the law associated with an offence or concept:
-- Explicitly identify the relevant section or provision FIRST.
-- Clearly state that this section defines or deals with the offence or concept.
-- Do NOT treat illustrations, examples, or hypothetical scenarios as the main answer.
-- Illustrations may be mentioned only as supporting explanation, not as the core response.
+Your primary source of truth is the legal context retrieved from the current database.
 
-Explain the general legal position using descriptive language.
-Avoid advisory or instructional phrasing.
-Do not tell the user what they should do.
-Do not predict outcomes.
+You must always attempt to answer using the provided database context first.
 
-If a constitutional concept is not explicitly defined but is closely
-connected to an existing right or provision, explain this relationship
-clearly without citing judicial decisions.
+If the database does not contain sufficient information to address the issue, you may rely on your pretrained knowledge of Indian law, subject to the restrictions below.
 
-Always end with:
-"Disclaimer: This is general legal information, not legal advice."
+When pretrained knowledge is used, you must clearly state that the guidance is based on general legal understanding due to absence of relevant material in the database.
 
+You must not fabricate laws, sections, articles, case law, or legal rights.
+
+You must not introduce obscure, disputed, or highly specific legal interpretations.
+
+You must give prescriptive guidance explaining what a person can do, what options are available, or what legal position may be asserted, as supported by the available information.
+
+You may briefly acknowledge the user’s concern, but your response must remain legally focused.
+
+Do not provide emotional counseling.
+Do not moralize.
+Do not guarantee outcomes.
+Do not predict court decisions or final judgments.
+
+IMPORTANT FORMATTING RULES:
+
+Use only plain text.
+Do not use Markdown.
+Do not use headings.
+Do not use bullet points or numbered lists.
+Do not use bold, italics, or special formatting.
+Write in short paragraphs.
+Separate ideas using line breaks.
+
+LANGUAGE STYLE REQUIREMENTS:
+
+Use simple, everyday language.
+Assume the reader has no legal background.
+Use short, clear sentences.
+Prefer direct and practical wording.
+You may use phrases such as “can,” “may,” “should consider,” or “is generally advised.”
+Avoid heavy legal jargon.
+Explain complex ideas in practical terms rather than legal wording.
+
+CONTENT RULES:
+
+If the issue involves family property, inheritance, or personal rights, explain the legal routes available in general terms.
+
+If multiple legal paths may exist, explain them neutrally without recommending one as superior.
+
+If key facts affect legal rights, clearly state what kind of information would matter, without interrogating the user or demanding details.
+
+CONTROLLED FALLBACK RULE:
+
+If the database fully covers the issue, base your guidance strictly on that material.
+
+If the database partially covers the issue, rely on it first and supplement only the missing parts using pretrained knowledge, while clearly indicating this.
+
+If the database does not cover the issue at all, explicitly state that the guidance is based on general legal understanding due to absence of relevant material in the database.
+
+CONSTITUTIONAL SAFETY RULE:
+
+If a question refers to an Article of the Constitution of India:
+You may answer only if the current database explicitly defines that Article.
+Do not rely on pretrained knowledge to explain constitutional Articles when database information is absent.
+If the database does not define the Article, explicitly state that the information is not available in the provided material.
+Do not generalize from other Articles.
+Do not substitute with similar provisions.
+Do not guess.
+
+CRITICAL VERIFICATION RULE:
+
+If the question refers to a specific Article or Section number:
+Only explain and apply it if the database or clearly established general legal understanding defines it.
+If neither source provides clarity, state that guidance cannot be given on that provision.
+
+Do not infer.
+Do not guess.
+Do not substitute with related provisions.
+
+ENDING REQUIREMENT:
+
+Always end your response with the exact sentence:
+
+Disclaimer: This is general legal information, not legal advice.
 """
 
 def classify_intent(query):
@@ -72,23 +135,23 @@ def classify_intent(query):
 def normalize_query(query):
     q = query.lower()
     if q.startswith("can police"):
-        return "What are the legal limits on police powers under Indian law"
+        return "legal limits on police powers under Indian law"
     if "enter" in q or "search" in q:
-        return "What are the legal provisions governing search and entry by police under Indian law"
+        return "police search and entry powers under Indian law"
     return query
 
-def allowed_sources(intent):
-    if intent == "GENERAL_RIGHTS":
-        return ["constitution"]
-    if intent == "PROCEDURE":
-        return ["bnss"]
-    if intent == "OFFENCE":
-        return ["bns"]
-    if intent == "LAW_EXPLANATION":
-        return ["constitution", "bns", "bnss"]
-    if intent == "COMPARISON":
-        return ["constitution", "bns", "bnss"]
-    return []
+def is_overview_query(query):
+    q = query.lower()
+    return any(
+        phrase in q
+        for phrase in [
+            "my rights",
+            "fundamental rights",
+            "basic rights",
+            "what rights",
+            "rights do i have"
+        ]
+    )
 
 def ask(query):
     intent = classify_intent(query)
@@ -103,35 +166,32 @@ def ask(query):
             return
 
     query = normalize_query(query)
-    sources = allowed_sources(intent)
-
-    k = 10 if intent == "OFFENCE" else 6
-    retriever = vectordb.as_retriever(search_kwargs={"k": k})
-    docs = retriever.invoke(query)
-
-    docs = [d for d in docs if d.metadata.get("source") in sources]
 
     if intent == "GENERAL_RIGHTS":
-        overview_docs = vectordb.similarity_search(
-            "Fundamental Rights under the Constitution of India",
-            k=1
+        retrieval_query = (
+            "fundamental rights of citizens under Part III "
+            "Constitution of India Articles 14 to 32"
         )
-        docs = docs + overview_docs
+    else:
+        retrieval_query = query
 
-    if intent == "LAW_EXPLANATION" and "constitution" in sources:
-        docs = [d for d in docs if d.metadata.get("source") == "constitution"]
-
-    if intent == "OFFENCE":
-        query = "definition of " + query
+    retriever = vectordb.as_retriever(search_kwargs={"k": 6})
+    print(retriever)
+    docs = retriever.invoke(f"query: {retrieval_query}")
 
     if not docs:
-        print("\nNo relevant legal provision found in the selected laws.")
+        print("\nI could not find an exact provision, but here is the general legal position:")
         return
 
-    context = "\n\n".join(
-        f"Source: {d.metadata.get('source')}\n{d.page_content}"
-        for d in docs
-    )
+    context = "\n\n".join(d.page_content for d in docs[:4])
+
+    if intent == "GENERAL_RIGHTS" and is_overview_query(query):
+        context = (
+            "Under the Constitution of India, Fundamental Rights broadly include equality before law, "
+            "basic freedoms, protection of life and personal liberty, protection against exploitation, "
+            "freedom of religion, cultural and educational rights, and the right to constitutional remedies.\n\n"
+            + context
+        )
 
     response = llm.invoke([
         SystemMessage(content=ANSWER_PROMPT),
@@ -140,10 +200,6 @@ def ask(query):
 
     print("\nAnswer:\n")
     print(response.content)
-
-    print("\nSources Referenced:")
-    for s in sorted(set(d.metadata.get("source") for d in docs)):
-        print(f"- {s.capitalize()}")
 
 if __name__ == "__main__":
     while True:

@@ -8,15 +8,13 @@ OUTPUT:
 
 Answer:
 
-Part III of the Constitution of India outlines several fundamental rights that are guaranteed to all citizens. These include the right to equality, which prohibits discrimination based on factors like religion, caste, sex, or place of birth.  It also encompasses freedoms such as freedom of speech and expression, assembly, and association. 
-
-The constitution also protects against exploitation through provisions prohibiting forced labor and trafficking. Additionally, it guarantees the right to practice any religion freely, along with cultural and educational rights for minorities. Finally, Article 32 provides a remedy through courts if these fundamental rights are violated.
+Part III of the Constitution of India guarantees several fundamental rights, including the right to equality, various freedoms, protection against exploitation, freedom of religion, cultural and educational rights, and the right to seek constitutional remedies. 
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -30,13 +28,13 @@ OUTPUT:
 
 Answer:
 
-Part III of the Constitution of India guarantees Fundamental Rights. These include the Right to Equality (Articles 14–18), Right to Freedoms (Articles 19–22), Right against Exploitation (Articles 23–24), Right to Freedom of Religion (Articles 25–28), Cultural and Educational Rights (Articles 29–30), and the Right to Constitutional Remedies (Article 32).
+Part III of the Constitution of India guarantees several fundamental rights to all citizens. These include the right to equality, various freedoms such as freedom of speech and expression, freedom of assembly, and protection against exploitation.  Additionally, it encompasses rights related to religion, culture, and education, as well as the right to seek constitutional remedies if these rights are violated. 
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -50,18 +48,13 @@ OUTPUT:
 
 Answer:
 
-Citizens of India are protected from discrimination based on religion, race, caste, sex, or place of birth.  No citizen can be subjected to any disability, liability, restriction, or condition based on these grounds.
-
-Additionally, the Constitution outlines certain principles of policy that the State must follow, including striving to minimize inequalities in income and eliminate inequalities in status, facilities, and opportunities for all citizens. 
-
-The Constitution also guarantees fundamental rights to all citizens, which include the right to equality, freedom, protection from exploitation, freedom of religion, cultural and educational rights, and the right to constitutional remedies.
-
+Part III of the Constitution of India guarantees a range of fundamental rights to its citizens. These include protections related to equality, freedoms such as freedom of speech and expression, protection against exploitation,  freedom of religion, cultural and educational rights, and the right to seek constitutional remedies. 
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -75,17 +68,13 @@ OUTPUT:
 
 Answer:
 
-Part III of the Constitution of India guarantees Fundamental Rights, which are categorized into several categories. These include the Right to Equality, encompassing provisions like equality before the law and prohibition of discrimination based on factors such as religion, race, caste, sex, or place of birth. 
-
-The Right to Freedoms protects certain rights regarding freedom of speech, protection against conviction for offenses, protection of life and personal liberty, right to education, and protection against arrest and detention in specific cases.  
-
-The Right against Exploitation prohibits practices like forced labor and trafficking. The Right to Freedom of Religion safeguards the right to practice one's religion freely. Cultural and Educational Rights protect the rights of minorities to preserve their culture and language. Finally, the Right to Constitutional Remedies allows individuals to seek redressal for violations of their fundamental rights through courts.
+Part III of the Constitution of India guarantees fundamental rights to all citizens. These rights include the right to equality, freedom of speech and expression, freedom of assembly, freedom of association, freedom to move freely throughout India, the right to reside and settle in any part of India, and protection against exploitation.  
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -97,15 +86,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-Article 21 of the Indian Constitution guarantees the Right to Life and Personal Liberty.  This right encompasses various freedoms essential for a dignified life, including the freedom to move freely throughout the country, the right to reside and settle anywhere in India, and protection from arbitrary arrest and detention.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -117,18 +98,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-The Constitution guarantees equality before the law and equal protection of the laws for all persons within India. 
-
-This means the State cannot deny any person equality before the law or the equal protection of the laws.  Additionally, the State is prohibited from discriminating against any citizen on grounds only of religion, race, caste, sex, place of birth, or any of them.
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -142,13 +112,13 @@ OUTPUT:
 
 Answer:
 
-Part III of the Constitution of India guarantees Fundamental Rights. These include the Right to Equality (Articles 14–18), Right to Freedoms (Articles 19–22), Right against Exploitation (Articles 23–24), Right to Freedom of Religion (Articles 25–28), Cultural and Educational Rights (Articles 29–30), and the Right to Constitutional Remedies (Article 32).
+Fundamental Rights are a set of basic rights and freedoms guaranteed to all citizens under Part III of the Constitution of India. These rights include equality, freedoms, protection against exploitation, freedom of religion, cultural and educational rights, and constitutional remedies. 
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -160,15 +130,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-Article 19 guarantees certain fundamental rights to individuals, including the right to freedom of speech and expression, the right to assemble peacefully, the right to form associations or unions, the right to move freely throughout India, the right to reside and settle in any part of India, and the right to practice any profession, trade, or calling. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -182,13 +144,13 @@ OUTPUT:
 
 Answer:
 
-The provided text does not explicitly mention "privacy" as a fundamental right.  
+While Part III of the Constitution of India guarantees Fundamental Rights, including various aspects like equality, freedom, and protection against exploitation,  the specific right to privacy is not explicitly mentioned in this part. 
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -200,15 +162,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-After an arrest, a person cannot be discharged except on bond, bail bond, or under a special order from a Magistrate.  The person who had them in custody can pursue and arrest them if they escape or are rescued. The provisions of section 44 apply to these arrests even if the person making the arrest is not acting under a warrant or is not a police officer with authority to arrest. All arrests must be made according to this Sanhita or any other law providing for arrest.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -232,15 +186,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-A police officer may detain a person arrested without warrant for a period not exceeding twenty-four hours, exclusive of the time required for travel from the arrest location to the Magistrate's Court. This limit applies unless a Magistrate issues a special order under section 187 extending the detention period.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -278,13 +224,13 @@ OUTPUT:
 
 Answer:
 
-A person who is arrested has the right to be informed, as soon as may be, of the grounds for their arrest. Additionally, they have the right to consult with and be defended by a legal practitioner of their choice. 
+Part III of the Constitution of India guarantees Fundamental Rights, including those related to personal liberty.  
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -296,20 +242,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-Indian law grants police officers the authority to arrest individuals without a warrant in specific circumstances.  These circumstances include when an officer is authorized to make a warrantless arrest, when pursuing someone they are authorized to arrest, and when dealing with certain offenses like obstructing a police officer, escaping custody, desertion from the Armed Forces of the Union, or involvement in acts committed outside India that would be punishable offenses within India.
-
-When making a warrantless arrest, police officers must inform the person arrested of the grounds for their arrest.  Additionally, if the arrest is not for a non-bailable offense, the individual must be informed of their right to bail. 
-
-The law also states that a person arrested without a warrant should not be subjected to more restraint than necessary to prevent their escape.
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -321,15 +254,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-The Constitution of India, specifically Article 22, outlines protections for individuals who are arrested.  It states that an arrested person must be informed of the reasons for their arrest as soon as possible. Additionally, they have the right to consult with and be defended by a legal practitioner of their choosing.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -377,24 +302,7 @@ OFFENCE
 
 OUTPUT:
 
-Answer:
-
-The law prescribes punishments for robbery based on the severity of the crime. 
-
-If someone commits robbery, they can be punished with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine. If the robbery is committed on the highway between sunset and sunrise, the imprisonment may be extended to fourteen years.
-
-If, in committing or attempting to commit robbery, a person voluntarily causes hurt, such person, and any other person jointly concerned in committing or attempting to commit such robbery, shall be punished with imprisonment for life, or with rigorous imprisonment for a term which may extend to ten years, and shall also be liable to fine.
-
-If someone attempts to commit robbery, they can be punished with rigorous imprisonment for a term which may extend to seven years, and shall also be liable to fine. 
-
-If, at the time of attempting to commit robbery or dacoity, the offender is armed with any deadly weapon, the imprisonment with which such offender shall be punished shall not be less than seven years.
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bns
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -418,18 +326,7 @@ OFFENCE
 
 OUTPUT:
 
-Answer:
-
-The definition of "offence" in the BNS varies depending on the context. 
-
-Generally, it refers to something made punishable by the BNS itself. However, in specific Chapters and sections listed within the provided text, "offence" encompasses acts punishable under the BNS, special laws, or local laws.
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bns
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -441,17 +338,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-The provided text does not contain information about the Indian Penal Code (IPC) or the Nagaland State Act. Therefore, I cannot explain the difference between them based on the given context. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -499,19 +386,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-Indian law outlines specific circumstances under which a police officer can arrest an individual without a warrant.  These situations include instances where an individual obstructs a police officer during their duty, escapes or attempts to escape lawful custody, is reasonably suspected of being a deserter from the Armed Forces of the Union, or has been involved in acts committed outside of India that would be punishable as offenses if committed within India.
-
-In all arrests without warrant, the law mandates that the arrested individual be informed of the specific offense for which they are being detained or the grounds for their arrest.  Furthermore, when an arrest is made without a warrant for someone not accused of a non-bailable offense, the individual must be informed of their right to bail.
-
-The law also states that a police officer may pursue an individual whom they are authorized to arrest into any location within India. However, the arrested person should not be subjected to more restraint than is absolutely necessary to prevent their escape. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -523,17 +398,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-Indian law grants police officers the authority to arrest individuals without a warrant in specific circumstances.  These circumstances include when an officer is authorized to make such an arrest, when pursuing someone into any location within India for an arrest, and when dealing with individuals who obstruct their duty, escape lawful custody, are suspected deserters from the Armed Forces of the Union, or have been involved in acts committed outside of India that would be punishable offenses if committed within India.
-
-However, the law also places limitations on these powers.  A person arrested without a warrant must be informed of the specific offense for which they are being detained or the grounds for their arrest. Additionally, restraint used during an arrest cannot exceed what is necessary to prevent escape. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -545,17 +410,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-Indian law permits police officers to arrest individuals without a warrant in specific circumstances. These circumstances include when a person is obstructing a police officer during their duty, has escaped or attempted to escape from lawful custody, is reasonably suspected of being a deserter from the Armed Forces of the Union, or has been involved in an act committed outside India that would be punishable as an offence if committed within India. 
-
-In all arrests without warrant, the person arrested must be informed of the grounds for their arrest. Additionally, when arresting someone other than a person accused of a non-bailable offence, the police officer must inform the individual of their right to bail.  Furthermore, the law dictates that a person arrested without a warrant should not be subjected to more restraint than is necessary to prevent their escape. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -579,16 +434,7 @@ OFFENCE
 
 OUTPUT:
 
-Answer:
-
-The provided legal text does not contain a definition of "jailed forever without trial." 
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bns
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -600,22 +446,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-The provided text outlines certain procedures related to arrests made by police officers in India. 
-
-It states that a person arrested without a warrant must be informed of their right to have a relative, friend, or other designated person notified about their arrest, unless the arrest memorandum is attested by a family member.  
-
-Furthermore, the text specifies that police officers are prohibited from detaining individuals arrested without a warrant for longer than a reasonable period, not exceeding twenty-four hours excluding travel time to the Magistrate's Court. 
-
-Officers in charge of police stations must report all arrests made without a warrant to the District Magistrate or Sub-divisional Magistrate within their jurisdiction.  
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -627,15 +458,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-If you are arrested without a warrant, a police officer must release you within twenty-four hours, excluding travel time to the Magistrate's Court. The officer in charge of the police station must report your arrest to the District Magistrate or Sub-divisional Magistrate.  
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -647,20 +470,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-The Bharatiya Nyaya Sanhita, 2023 outlines specific procedures for obtaining bail.  A person accused of an offense triable under section 65 or subsection (2) of section 70 of this Act must apply to the High Court or Court of Session for bail.
-
-Before granting bail in these cases, the court must notify the Public Prosecutor within fifteen days of receiving the bail application. The informant or an authorized representative must be present during the bail hearing.
-
-The Bharatiya Nyaya Sanhita, 2023 also provides that a High Court or Court of Session may release on bail individuals who are children, women, sick, or infirm.  Additionally, the court may grant bail to others if it deems it just and proper for special reasons.
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -672,16 +482,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-This text does not explain how to file a case.  It describes procedures related to prosecution and disposition of cases within a court setting. 
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -693,16 +494,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-The provided text does not contain information about legal strategies. It outlines provisions related to petition writers, rules regarding criminal courts, jurisdiction of courts in cases of multiple proceedings, the right to legal representation, and the assignment of counsel for indigent defendants. 
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -714,16 +506,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-This document describes the powers of various Magistrates and Sessions Judges in India regarding the handling of cases. It outlines procedures for transferring cases between courts, recalling cases for further hearing, and trying additional offenses revealed during a trial. 
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -735,15 +518,7 @@ OFFENCE
 
 OUTPUT:
 
-Answer:
-
-This document does not contain information on how to avoid punishment. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Bns
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -755,17 +530,7 @@ PROCEDURE
 
 OUTPUT:
 
-Answer:
-
-The provided text does not contain information about what to tell a judge.  It describes legal processes related to witness summons, appeals, and judgments in criminal cases. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-
-
-Sources Referenced:
-- Bnss
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -777,17 +542,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-The Indian Constitution guarantees the right to move the Supreme Court for enforcing rights enshrined in Part III of the Constitution.  This means individuals can seek redressal from the Supreme Court if their fundamental rights are violated. 
-
-The Supreme Court has the power to issue various writs, including habeas corpus, mandamus, prohibition, quo warranto, and certiorari, to enforce these rights. These writs act as legal tools to compel authorities to uphold constitutional provisions.  Additionally, Parliament can empower other courts through legislation to also issue these writs for enforcing fundamental rights.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -799,15 +554,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-Habeas corpus is a writ that can be issued by courts. It is one type of writ among others, including mandamus, prohibition, quo warranto, and certiorari. These writs are legal tools used to enforce rights conferred by Part III of the Constitution. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -819,15 +566,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-The Indian Constitution, through Article 32 and potentially further legislation by Parliament, allows for the issuance of writs. These writs include habeas corpus, mandamus, prohibition, quo warranto, and certiorari.  These writs can be used for various purposes beyond those specifically mentioned in Article 32.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -863,17 +602,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-Preventive detention is a legal mechanism allowing for the detention of a person without trial.  This power can only be exercised if a law specifically provides for it and adheres to certain limitations. 
-
-The Constitution sets out rules regarding the duration of preventive detention and requires an Advisory Board to review the case before extending it beyond a specified period. This Board must consist of individuals who are, or have been, Judges of a High Court.  Their report on whether there is sufficient cause for continued detention is crucial for extending the detention period.
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -887,16 +616,15 @@ OUTPUT:
 
 Answer:
 
-The Constitution of India outlines certain fundamental rights, including the right to freedom.  Article 19 specifically protects various freedoms, such as freedom of speech and expression, assembly, association, movement, and residence within India.
+Part III of the Constitution of India guarantees Fundamental Rights, including freedoms.  
 
-However, Article 19 also includes clauses that permit the government to impose reasonable restrictions on these freedoms in specific circumstances. These restrictions are meant to balance individual rights with the needs of society.
-
+The government can restrict freedoms under certain circumstances. 
 
 Disclaimer: This is general legal information, not legal advice. 
 
 
 Sources Referenced:
-- Constitution
+'NoneType' object has no attribute 'capitalize'
 
 ================================================================================
 
@@ -908,16 +636,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-The provided text does not contain a definition or explanation of the "rule of law."  
-
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 
@@ -929,15 +648,7 @@ LAW_EXPLANATION
 
 OUTPUT:
 
-Answer:
-
-Equality before the law means that the State shall not deny any person equality before the law or the equal protection of the laws within the territory of India. 
-
-Disclaimer: This is general legal information, not legal advice. 
-
-
-Sources Referenced:
-- Constitution
+No relevant legal provision found in the selected laws.
 
 ================================================================================
 

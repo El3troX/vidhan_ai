@@ -1,88 +1,72 @@
 import os
 import re
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain_core.documents import Document
 
 DATA_DIR = "data"
 DB_DIR = "db"
 
-documents = []
-
-files = {
+FILES = {
     "constitution.pdf": "constitution",
     "bns.pdf": "bns",
     "bnss.pdf": "bnss"
 }
 
-section_pattern = re.compile(
-    r"(Section\s+\d+|Article\s+\d+|CHAPTER\s+[IVXLC]+|Chapter\s+\d+|Murder|Culpable Homicide|Theft|Robbery|Cheating)",
-    re.IGNORECASE
-)
+def extract_structured_chunks(text, source):
+    chunks = []
 
-for file, source in files.items():
-    path = os.path.join(DATA_DIR, file)
-    loader = PyPDFLoader(path)
-    pages = loader.load()
+    if source == "constitution":
+        pattern = r"(Article\s+\d+[A-Z]?)"
+    else:
+        pattern = r"(Section\s+\d+)"
 
-    current_section = None
+    splits = re.split(pattern, text)
 
-    for p in pages:
-        text = p.page_content
+    for i in range(1, len(splits), 2):
+        header = splits[i].strip()
+        body = splits[i + 1].strip()
 
-        matches = section_pattern.findall(text)
-        if matches:
-            current_section = matches[0].strip()
+        content = f"{header}\n{body}"
 
-        if current_section:
-            text = f"Provision context: {current_section}\n\n{text}"
-
-        documents.append(
+        chunks.append(
             Document(
-                page_content=text,
+                page_content=content,
                 metadata={
                     "source": source,
-                    "section_hint": current_section if current_section else "unknown"
+                    "identifier": header
                 }
             )
         )
 
-overview_text = """
-Part III of the Constitution of India guarantees Fundamental Rights.
-These include the Right to Equality (Articles 14–18),
-Right to Freedoms (Articles 19–22),
-Right against Exploitation (Articles 23–24),
-Right to Freedom of Religion (Articles 25–28),
-Cultural and Educational Rights (Articles 29–30),
-and the Right to Constitutional Remedies (Article 32).
-"""
+    return chunks
 
-documents.append(
-    Document(
-        page_content=overview_text,
-        metadata={"source": "constitution", "type": "overview"}
-    )
-)
+documents = []
 
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=700,
-    chunk_overlap=100
-)
+for filename, source in FILES.items():
+    path = os.path.join(DATA_DIR, filename)
+    loader = PyPDFLoader(path)
+    pages = loader.load()
 
-chunks = splitter.split_documents(documents)
+    full_text = "\n".join(p.page_content for p in pages)
+
+    structured_chunks = extract_structured_chunks(full_text, source)
+    documents.extend(structured_chunks)
 
 embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+    model_name="BAAI/bge-large-en-v1.5",
+    model_kwargs={"device": "cuda"},
+    encode_kwargs={"normalize_embeddings": True}
 )
 
 vectordb = Chroma.from_documents(
-    documents=chunks,
+    documents=documents,
     embedding=embeddings,
-    persist_directory=DB_DIR
+    persist_directory=DB_DIR,
+    collection_name="legal_docs_chunks_only"
 )
 
 vectordb.persist()
 
-print("Ingestion complete.")
+print("Ingestion complete (structure-aware chunking).")

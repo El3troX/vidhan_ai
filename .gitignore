@@ -11,4 +11,5 @@ wheels/
 db/*
 data/*
 
-frontend/node_modules/*
+*node_modules
+.env
